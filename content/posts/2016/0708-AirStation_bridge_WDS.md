@@ -1,6 +1,6 @@
 ---
 title: "WG1400HP(Aterm)を親機、WHR-1166DHP(Air Station)を子機としたWDS接続で嵌った"
-date: 2018-03-11T20:35:24+09:00
+date: 2016-07-08T19:15:00+09:00
 draft: false
 tags: ["Network"]
 ---
