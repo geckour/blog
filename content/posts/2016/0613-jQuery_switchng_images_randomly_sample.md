@@ -1,7 +1,7 @@
 ---
 title: "[jQuery] 60秒ごとにランダムに画像を切り替えるサンプル"
 date: 2016-06-13T23:24:00+09:00
-draft: true
+draft: false
 tags: ["Web", "JavaScript"]
 ---
 ```js
