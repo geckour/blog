@@ -6,10 +6,21 @@
     <description>Recent content in Posts on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 13 Jun 2016 23:24:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Mar 2018 20:35:24 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WG1400HP(Aterm)を親機、WHR-1166DHP(Air Station)を子機としたWDS接続で嵌った</title>
+      <link>http://geckour.orz.hm/blog/posts/2016/0708-airstation_bridge_wds/</link>
+      <pubDate>Sun, 11 Mar 2018 20:35:24 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2016/0708-airstation_bridge_wds/</guid>
+      <description>症状はAir Station側を(ハードウェアスイッチで)BRIDGEモードにするとアクセスできず、かといってROUTERモードにするとWDSを有効化出来ないというもの。
+結論としては、Air StationをBRIDGEモードにした上で、端末から
+   key value     IPアドレス 192.168.11.x   サブネットマスク 255.255.255.0   ルーター 192.168.11.100    として接続し、ブラウザのアドレスバーに 192.168.11.100 と入力しアクセスする。 あとはよしなに設定して終了。Air Stationまじ不思議ちゃん</description>
+    </item>
     
     <item>
       <title>[jQuery] 60秒ごとにランダムに画像を切り替えるサンプル</title>
