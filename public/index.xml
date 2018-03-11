@@ -6,10 +6,25 @@
     <description>Recent content on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 23 Sep 2017 01:36:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2017 12:37:00 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi 3 model BのオンボードWi-Fiチップを使ってad-hocでbroadcast通信する</title>
+      <link>http://geckour.orz.hm/blog/posts/2017/1202-broadcast_by_ad-hoc_with_rpi3_on_board_chip/</link>
+      <pubDate>Sat, 02 Dec 2017 12:37:00 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2017/1202-broadcast_by_ad-hoc_with_rpi3_on_board_chip/</guid>
+      <description>ad-hocモードに設定する際、妙にハマったのでメモ。
+まずは時刻が正確に同期されていることを確認する。 Proxy環境下などでNTPが使えない場合は以下の手順で同期する。
+$ nano ~/.bashrc
+.bashrc&amp;gt;
+http_proxy=http://your.proxy.example.com:port https_proxy=http://your.proxy.example.com:port ftp_proxy=http://your.proxy.example.com:port alias setdate=&#39;sudo date --set @&amp;quot;$(wget -q https://ntp-a1.nict.go.jp/cgi-bin/jst -O - | sed -n 4p | cut -d. -f1)&amp;quot;&#39;  $ source ~/.bashrc $ setdate # 時刻を同期  $ sudo -E rpi-update # ファームウェアなどを更新 $ sudo reboot  $ sudo nano /etc/network/interfaces.d/static_ad-hoc_wlan0
+static_ad-hoc_wlan0&amp;gt;
+auto wlan0 allow-hotplug wlan0 iface wlan0 inet static address 192.168.0.x netmask 255.255.255.0 wireless-channel 4 # 空いてるチャンネルを選ぶ wireless-mode ad-hoc wireless-essid hoge # 何でもよい wireless-key f0f0f0f0f0 # 16進10桁 or 26桁  $ sudo rfkill unblock all;sudo ip addr flush dev wlan0;sudo systemctl restart networking $ sudo reboot # 設定がうまく反映されてない場合は再起動する  ここまででad-hocの設定は終了。</description>
+    </item>
     
     <item>
       <title>Essential PH-1を購入した</title>
