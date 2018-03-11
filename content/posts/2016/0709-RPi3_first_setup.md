@@ -1,7 +1,7 @@
 ---
 title: "Raspberry Pi 3 model B & 部品類の購入からRaspberry Piセットアップまで"
 date: 2018-03-11T20:53:28+09:00
-draft: true
+draft: false
 tags: ["RPi"]
 ---
 ふと思い立ってRaspberry Piを触ってみることにした。
