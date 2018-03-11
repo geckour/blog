@@ -9,7 +9,21 @@
     <lastBuildDate>Fri, 08 Jul 2016 19:15:00 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+	
+	    <item>
+      <title>Raspberry Pi 3 model B &amp; 部品類の購入からRaspberry Piセットアップまで</title>
+      <link>http://geckour.orz.hm/blog/posts/2016/0709-rpi3_first_setup/</link>
+      <pubDate>Sun, 11 Mar 2018 20:53:28 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2016/0709-rpi3_first_setup/</guid>
+      <description>ふと思い立ってRaspberry Piを触ってみることにした。
+材料 今回購入したものはこちら:
+ Raspberry Pi 3 model B(element14) microSDカード(16GB, TOSHIBA THN-M301R0160A4) USB Aオス-microBオスケーブル ブレッドボード ジャンパコード  オス-オス: たくさん オス-メス 赤: 5 黒: 5 白: 10  抵抗  100Ω: 5 300Ω: 5 1kΩ: 5  LED照光式押しボタンスイッチ(モーメンタリ) 赤外光LED: 10 フォトカプラ 青色LED: 2 押しボタンスイッチ(モーメンタリ) トグルスイッチ デジタル温湿度センサモジュール(AE-HDC1000) デジタル気圧センサモジュール(AE-LPS25H) デジタル照度センサモジュール(TSL2561)  計約1万円でした。
+セットアップ手順 OSインストール まずはRaspberry Pi用のOSインストーラであるNOOBSをダウンロード。 特にこだわりがない限り、NOOBS LITEではなく標準のNOOBSを使用することを推奨。 ダウンロードしたNOOBS_xxx.zipを解凍し、SDカードをFAT32でフォーマットしたらコピーする。
+ SDカード キーボード/マウス HDMI(or 何らかの映像端子) 電源 の順に接続する。電源を接続すると勝手に起動する。  ここまでは良かったのだが、起動すると以下の画面が出た。
+Closeを押すとこの画面に。
+そしてここから1時間以上放置しても画面が変わらない。 気を取り直してフォーマッタをMacのディスクユーティリティに変えて再度フォーマットしてみた(それまではSD AssociationのSDFormatterを使っていた)が駄目だったので、結局Raspbianのimgを直接焼いた。 Macでの焼き方はここを参照。</description>
+    </item>
     
     <item>
       <title>WG1400HP(Aterm)を親機、WHR-1166DHP(Air Station)を子機としたWDS接続で嵌った</title>
