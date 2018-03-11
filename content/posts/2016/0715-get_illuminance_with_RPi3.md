@@ -2,6 +2,7 @@
 title: "Raspberry Pi 3で照度の取得"
 date: 2018-07-15T03:42:00+09:00
 draft: false
+tags: ["RPi"]
 ---
 今回使ったセンサは<a href="http://akizukidenshi.com/catalog/g/gM-08219/" target="_blank">こちら</a> (TSL2561)  
 今回の回路図がこちら  
