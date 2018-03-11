@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on 網戸の裏</title>
+    <link>http://geckour.orz.hm/blog/tags/javascript/</link>
+    <description>Recent content in Javascript on 網戸の裏</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 13 Jun 2016 23:24:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://geckour.orz.hm/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[jQuery] 60秒ごとにランダムに画像を切り替えるサンプル</title>
+      <link>http://geckour.orz.hm/blog/posts/2016/0613-jquery_switchng_images_randomly_sample/</link>
+      <pubDate>Mon, 13 Jun 2016 23:24:00 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2016/0613-jquery_switchng_images_randomly_sample/</guid>
+      <description>$(function(){ var isFirstLoadImg = true; var bgImg = [&amp;quot;img/hoge.jpg&amp;quot;, &amp;quot;img/huga.jpg&amp;quot;, &amp;quot;img/piyo.jpg&amp;quot;]; var index = Math.floor(Math.random() * bgImg.length); loadImg(index); function loadImg(i) { var image = new Image(); image.onload = function(){ if (isFirstLoadImg) { isFirstLoadImg = false; $(&amp;quot;#bg&amp;quot;).css(&amp;quot;background-image&amp;quot;,&amp;quot;url(\&amp;quot;&amp;quot; + bgImg[i] + &amp;quot;\&amp;quot;)&amp;quot;); $(&amp;quot;#bg&amp;quot;).fadeIn(1000); setIndex(); loadImg(index); } }; image.src = bg[i]; } function setIndex() { var index_current = index; while (index == index_current) { index = Math.floor(Math.random() * bgImg.length); } } function changeBg(i) { $(&amp;quot;#bg&amp;quot;).</description>
+    </item>
+    
+  </channel>
+</rss>

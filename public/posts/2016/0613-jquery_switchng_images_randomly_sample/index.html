@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		
+		<meta name="generator" content="Hugo 0.36.1" />
+		<title>[jQuery] 60秒ごとにランダムに画像を切り替えるサンプル &middot; 網戸の裏</title>
+		<link rel="shortcut icon" href="http://geckour.orz.hm/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://geckour.orz.hm/blog/css/style.css">
+		<link rel="stylesheet" href="http://geckour.orz.hm/blog/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="http://geckour.orz.hm/blog/css/monosocialiconsfont.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://geckour.orz.hm/blog/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='http://geckour.orz.hm/blog/posts'>Archive</a>
+	<a href='http://geckour.orz.hm/blog/tags'>Tags</a>
+	<a href='http://geckour.orz.hm/blog/about'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        [jQuery] 60秒ごとにランダムに画像を切り替えるサンプル
+                    </h1>
+                    <h2 class="headline">
+                    Jun 13, 2016 23:24
+                    · 88 words
+                    · 1 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="http://geckour.orz.hm/blog/tags/web">Web</a>
+                          
+                              <a href="http://geckour.orz.hm/blog/tags/javascript">JavaScript</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <pre><code class="language-js">$(function(){
+    var isFirstLoadImg = true;
+    var bgImg = [&quot;img/hoge.jpg&quot;, &quot;img/huga.jpg&quot;, &quot;img/piyo.jpg&quot;];
+    var index = Math.floor(Math.random() * bgImg.length);
+
+    loadImg(index);
+    function loadImg(i) {
+        var image = new Image();
+
+        image.onload = function(){
+            if (isFirstLoadImg) {
+                isFirstLoadImg = false;
+                $(&quot;#bg&quot;).css(&quot;background-image&quot;,&quot;url(\&quot;&quot; + bgImg[i] + &quot;\&quot;)&quot;);
+                $(&quot;#bg&quot;).fadeIn(1000);
+                setIndex();
+                loadImg(index);
+            }
+        };
+        image.src = bg[i];
+    }
+
+    function setIndex() {
+        var index_current = index;
+        while (index == index_current) {
+            index = Math.floor(Math.random() * bgImg.length);
+        }
+    }
+
+    function changeBg(i) {
+        $(&quot;#bg&quot;).fadeOut(1000, function(){
+            $(&quot;#bg&quot;).css(&quot;background-image&quot;,&quot;url(\&quot;&quot; + bgImg[i] + &quot;\&quot;)&quot;);
+        });
+        $(&quot;#bg&quot;).fadeIn(1000);
+    }
+
+    setInterval(function(){
+        changeBg(index);
+        setIndex();
+        loadImg(index);
+    }, 60000);
+});
+</code></pre>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+    <p class="small">
+    
+       © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> 
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="http://geckour.orz.hm/blog/js/jquery-3.3.1.min.js"></script>
+<script src="http://geckour.orz.hm/blog/js/main.js"></script>
+<script src="http://geckour.orz.hm/blog/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>
