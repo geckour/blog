@@ -1,0 +1,4 @@
+baseURL = "http://geckour.orz.hm/blog/"
+languageCode = "ja-jp"
+title = "網戸の裏"
+theme = "hugo-theme-cactus-plus"
