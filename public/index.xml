@@ -6,7 +6,7 @@
     <description>Recent content on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 11 Mar 2018 20:35:24 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jul 2016 19:15:00 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>WG1400HP(Aterm)を親機、WHR-1166DHP(Air Station)を子機としたWDS接続で嵌った</title>
       <link>http://geckour.orz.hm/blog/posts/2016/0708-airstation_bridge_wds/</link>
-      <pubDate>Sun, 11 Mar 2018 20:35:24 +0900</pubDate>
+      <pubDate>Fri, 08 Jul 2016 19:15:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0708-airstation_bridge_wds/</guid>
       <description>症状はAir Station側を(ハードウェアスイッチで)BRIDGEモードにするとアクセスできず、かといってROUTERモードにするとWDSを有効化出来ないというもの。
