@@ -5,11 +5,11 @@ draft: false
 tags: ["RPi", "Web"]
 ---
 今回使うセンサは<a href="http://akizukidenshi.com/catalog/g/gK-08338/" target="_blank">こちら</a>(AE-LPS25H)。  
-今回の回路図は<a href="http://geckour.orz.hm/blog/web/2016/07/12/164" target="_blank">前回</a>と同じです  
+今回の回路図は<a href="http://geckour.orz.hm/blog/2016/0712-get_temperature_and_humidity_withRPi3" target="_blank">前回</a>と同じです  
 ![circuit](/images/temp_humi_press.png)  
 今回は右側のブロックを使用します。
 
-I2Cデバイスの設定方法は<a href="http://geckour.orz.hm/blog/web/2016/07/12/164" target="_blank">前回</a>を参照してください。  
+I2Cデバイスの設定方法は<a href="http://geckour.orz.hm/blog/2016/0712-get_temperature_and_humidity_withRPi3" target="_blank">前回</a>を参照してください。  
 LPS25Hのアドレスは`0x5c`です。
 
 今回のサンプルコードはこちら
