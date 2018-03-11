@@ -1,7 +1,7 @@
 ---
 title: "WG1400HP(Aterm)を親機、WHR-1166DHP(Air Station)を子機としたWDS接続で嵌った"
 date: 2018-03-11T20:35:24+09:00
-draft: true
+draft: false
 tags: ["Network"]
 ---
 症状はAir Station側を(ハードウェアスイッチで)BRIDGEモードにするとアクセスできず、かといってROUTERモードにするとWDSを有効化出来ないというもの。
