@@ -6,10 +6,23 @@
     <description>Recent content on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 12 Jul 2016 21:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jul 2016 03:42:00 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi 3で照度の取得</title>
+      <link>http://geckour.orz.hm/blog/posts/2016/0715-get_illuminance_with_rpi3/</link>
+      <pubDate>Fri, 15 Jul 2016 03:42:00 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2016/0715-get_illuminance_with_rpi3/</guid>
+      <description>今回使ったセンサはこちら (TSL2561)
+今回の回路図がこちら
+今回のサンプルコードは、こちらのコードをsmbus向けに書きなおしたものです。
+get_tsl2561.py&amp;gt;
+#!/usr/bin/env python # -*- coding: UTF-8 -*- import smbus as sb import sys import os import time import json def overwrite(s): sys.stdout.write(&amp;quot;\r\033[K&amp;quot; + s) sys.stdout.flush() class TSL2561: VISIBLE = 2 # channel 0 - channel 1 INFRARED = 1 # channel 1 FULLSPECTRUM = 0 # channel 0 ADDR_LOW = 0x29 ADDR_NORMAL = 0x39 ADDR_HIGH = 0x49 PACKAGE_CS = 0 PACKAGE_T_FN_CL = 1 COMMAND_BIT = 0x80 WORD_BIT = 0x20 CONTROL_POWERON = 0x03 CONTROL_POWEROFF = 0x00 LUX_CHSCALE_TINT0 = 322.</description>
+    </item>
     
     <item>
       <title>Raspberry Pi 3で気圧(と温度)の取得</title>
