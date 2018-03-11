@@ -1,6 +1,6 @@
 ---
 title: "Essential PH-1を購入した"
-date: 2018-03-12T01:54:53+09:00
+date: 2017-09-23T01:36:00+09:00
 draft: false
 tags: ["Gadget", "Android"]
 ---
