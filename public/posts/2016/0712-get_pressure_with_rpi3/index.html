@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		
+		<meta name="generator" content="Hugo 0.36.1" />
+		<title>Raspberry Pi 3で気圧(と温度)の取得 &middot; 網戸の裏</title>
+		<link rel="shortcut icon" href="http://geckour.orz.hm/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://geckour.orz.hm/blog/css/style.css">
+		<link rel="stylesheet" href="http://geckour.orz.hm/blog/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="http://geckour.orz.hm/blog/css/monosocialiconsfont.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://geckour.orz.hm/blog/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='http://geckour.orz.hm/blog/posts'>Archive</a>
+	<a href='http://geckour.orz.hm/blog/tags'>Tags</a>
+	<a href='http://geckour.orz.hm/blog/about'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Raspberry Pi 3で気圧(と温度)の取得
+                    </h1>
+                    <h2 class="headline">
+                    Jul 12, 2016 21:08
+                    · 253 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="http://geckour.orz.hm/blog/tags/rpi">RPi</a>
+                          
+                              <a href="http://geckour.orz.hm/blog/tags/web">Web</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>今回使うセンサは<a href="http://akizukidenshi.com/catalog/g/gK-08338/" target="_blank">こちら</a>(AE-LPS25H)。<br />
+今回の回路図は<a href="http://geckour.orz.hm/blog/2016/0712-get_temperature_and_humidity_withRPi3" target="_blank">前回</a>と同じです<br />
+<img src="http://geckour.orz.hm/blog/images/temp_humi_press.png" alt="circuit" /><br />
+今回は右側のブロックを使用します。</p>
+
+<p>I2Cデバイスの設定方法は<a href="http://geckour.orz.hm/blog/2016/0712-get_temperature_and_humidity_withRPi3" target="_blank">前回</a>を参照してください。<br />
+LPS25Hのアドレスは<code>0x5c</code>です。</p>
+
+<p>今回のサンプルコードはこちら</p>
+
+<p><code>get_lps25h.py</code></p>
+
+<pre><code class="language-py">#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+import smbus as sb
+import os
+import sys
+import time
+import json
+
+INTERVAL = 1
+
+LPS25H_ADDRESS = 0x5c
+LPS25H_CHANNEL = 1
+
+WHO_AM_I = 0x0f
+CTRL_REG1 = 0x20
+
+PRESS_POUT_XL = 0x28
+PRESS_OUT_L = 0x29
+PRESS_OUT_H = 0x2a
+
+TEMP_OUT_L = 0x2b
+TEMP_OUT_H = 0x2c
+
+def overwrite(s):
+    sys.stdout.write(&quot;\r\033[K&quot; + s)
+    sys.stdout.flush()
+
+
+class LPS25H:
+    def __init__(self):
+        self.lps25h = sb.SMBus(LPS25H_CHANNEL)
+        self.fromcgi = &quot;REQUEST_METHOD&quot; in os.environ
+        self.esta = False
+
+    def config(self):
+        whoami = self.lps25h.read_byte_data(LPS25H_ADDRESS, WHO_AM_I)
+        if whoami != 0xbd:
+            if not self.fromcgi:
+                overwrite(&quot;エラー: センサと通信できません&quot;)
+            self.esta = False
+            return
+        else:
+            self.esta = True
+
+        self.lps25h.write_i2c_block_data(LPS25H_ADDRESS, CTRL_REG1, [0x90])
+        if not self.fromcgi:
+            overwrite(&quot;測定中...&quot;)
+        time.sleep(0.5)
+
+    def read_value(self):
+        def conv(d):
+            d[0] = float(d[0]) / float(0xfff)
+            if d[1] &amp; 0x8000:
+                d[1] = -((d[1] - 1) ^ 0xffff)
+            d[1] = float(d[1]) / 480.0 + 42.5
+
+            return d
+
+        if self.esta:
+            data = [
+                (self.lps25h.read_i2c_block_data(LPS25H_ADDRESS, PRESS_POUT_XL, 1)[0] |
+                 self.lps25h.read_i2c_block_data(LPS25H_ADDRESS, PRESS_OUT_L, 1)[0] &lt;&lt; 8 |
+                 self.lps25h.read_i2c_block_data(LPS25H_ADDRESS, PRESS_OUT_H, 1)[0] &lt;&lt; 16),
+                (self.lps25h.read_i2c_block_data(LPS25H_ADDRESS, TEMP_OUT_L, 1)[0] |
+                 self.lps25h.read_i2c_block_data(LPS25H_ADDRESS, TEMP_OUT_H, 1)[0] &lt;&lt; 8)]
+
+            if not (data[0] &lt; 0 or data[1] &lt; 0):
+                return conv(data)
+            else:
+                return None
+        else:
+            return None
+
+    def get_value(self):
+        data = LPS25H.read_value(self)
+        if data is not None:
+            return {&quot;press&quot;: data[0], &quot;temp&quot;: data[1]}
+        else:
+            return None
+
+sensor = LPS25H()
+sensor.config()
+
+if sensor.fromcgi:
+    sys.stdout.write(&quot;Content-Type: application/javascript; charset=utf-8\n\n&quot;)
+    value = sensor.get_value()
+    if value is not None:
+        sys.stdout.write(json.dumps(value))
+    else:
+        sys.stdout.write(json.dumps({&quot;error&quot;: &quot;Can't read value&quot;}))
+
+else:
+    try:
+        while True:
+            value = sensor.read_value()
+            if value is not None:
+                overwrite(&quot;気圧: %fhPa, 温度: %f℃&quot; % (value[0], value[1]))
+            else:
+                overwrite(&quot;エラー: 有効な値が取得できません&quot;)
+                break
+            time.sleep(INTERVAL)
+
+    except KeyboardInterrupt:
+        print &quot;\n&quot;
+</code></pre>
+
+<p>このコードはCGIとして実行するとJSONを返します。</p>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+    <p class="small">
+    
+       © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> 
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="http://geckour.orz.hm/blog/js/jquery-3.3.1.min.js"></script>
+<script src="http://geckour.orz.hm/blog/js/main.js"></script>
+<script src="http://geckour.orz.hm/blog/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>
