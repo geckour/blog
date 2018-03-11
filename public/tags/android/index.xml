@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on 網戸の裏</title>
+    <link>http://geckour.orz.hm/blog/tags/android/</link>
+    <description>Recent content in Android on 網戸の裏</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 23 Sep 2017 01:36:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://geckour.orz.hm/blog/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Essential PH-1を購入した</title>
+      <link>http://geckour.orz.hm/blog/posts/2017/0923-bought_essential_ph-1/</link>
+      <pubDate>Sat, 23 Sep 2017 01:36:00 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2017/0923-bought_essential_ph-1/</guid>
+      <description>戯れにAndroid Oをインストールしたところ、僕のNexus 5Xも無事タイマーが発動してお亡くなりになったのでちょうど発売間近だったPH-1を購入してみました。
+詳しいスペックについては公式ページを参照してください。
+予約から着弾まで 僕が予約しようとしたのはEssential公式が炎上した後だったので、無難に米Amazonで予約を試みました。
+日本発送も標準対応で一安心〜 …と思っていたのも束の間、Amazonからメールが届きます。
+「君の信用情報あてにならんからクレジットカードの請求書のコピーとか諸々セットでFAXしてね（要約）」
+えぇ〜… 面倒くさ… なんでまたFAX… と思いつつ、仕方がないのでコンビニから国際FAX送信。
+請求書をクレジットの券面と読み違えてすったもんだしたのは秘密。
+ちなみにこの時点で予約はキャンセルされています。
+そうこうしている内に発売日を迎え、ようやく信用情報が認められた頃にはBlack Moon(カラーバリエーション)が在庫切れ。
+仕方がないのでPure Whiteを注文するも、全然発送されない…
+調べていくと、Pure Whiteは発売日がずれ込んでいるという非公式情報が。(Essential社、基本的に公式情報が貧弱で使えないのどうにかしてほしい)
+Amazonを監視してたらBlack Moonの在庫が復活したので、速攻予約してPure Whiteをキャンセル。
+一番早い配送オプションを指定したらアメリカから4日ほどで自宅に届きました。
+使ってみて 箱がちっちゃい 必要最小限とまでは行きませんが、コンパクトにまとまっていていい感じです。
+内容物は以下の通り。
+ PH-1本体 USB Type-A to USB Type-C ケーブル USB Type-C to ステレオミニジャック ケーブル AC to USB Type-C (female) アダプタ 説明書類(SIMピン付き)  ACアダプタが若干でかい以外はデザインも統一感があって好みでした。
+本体にステレオミニジャックがないのは辛い 分かっていたこととは言え結構辛い。
+そこまで防水性能が高いというわけでもないのになぜ付けないのか…
+そこそこ重い 外装の大部分がチタン製らしいのですが、それもあってかなかなかにずっしりとしています。
+最近のスマホの傾向に乗ってやや大きめの本体とあいまって、片手で使うのは少ししんどいかなあという感想。
+指紋認証が早い 比較対象がNexus 5Xのみで申し訳ないですが、それと比べるとかなり早く感じます。
+もともとNexus 5Xでそんなに不満を感じていなかったのですが、これになれるともう戻れない予感。
+ただ、認証エリアのリングの出っ張りが控えめなので、慣れるまではなかなかうまくタッチできませんでした(笑)
+背面が鏡面・平坦 良くも悪くもツルツル・ピッカピカです。
+鏡代わりに使えるのが何気に便利だなぁと思いつつ、滑りやすくもあるので純粋に落としそうになるのと、寝っ転がってお腹の上に置いたりしてもすぐに滑り落ちます。
+紙の上に置いたりしても、紙質によっては結構滑るので勢い余って机から落としたりしないよう注意が必要かも。
+カメラ部が出っ張っていないのと、先述の通り指紋認証のリングが平坦なので机などに置きながら使ってもカタカタしませんが、指の動きに合わせて本体も机の上を滑ったりします。
+NFCのアンテナ位置が不明 公式サイトを見てもどの辺りにNFCのアンテナが内蔵されているか分かる資料が見当たりません。</description>
+    </item>
+    
+  </channel>
+</rss>
