@@ -1,4 +1,5 @@
 baseURL = "http://geckour.orz.hm/blog/"
+canonifyURLs = true # サブパス運用時のみ設定
 languageCode = "ja-jp"
 title = "網戸の裏"
 theme = "hugo-theme-cactus-plus"
