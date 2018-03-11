@@ -6,10 +6,22 @@
     <description>Recent content in Posts on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 02 Dec 2017 12:37:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Dec 2017 14:18:00 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gradle Kotlin DSLを使ってみる (build.gradleのbuild.gradle.kts化)</title>
+      <link>http://geckour.orz.hm/blog/posts/2017/1220-taste_gradle_kotlin_dsl/</link>
+      <pubDate>Wed, 20 Dec 2017 14:18:00 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2017/1220-taste_gradle_kotlin_dsl/</guid>
+      <description>はじめに 現状、Gradle Kotlin DSLなファイルを編集中に大量のLintエラーが出たり、それを解消するための再読込の仕組みが見当たらないなど、あまり積極的におすすめできる段階ではないということを予め述べておきます。
+結論が見たい方のために 最終的に出来上がった build.gradle.kts 及びその周辺ファイルをまず載せておきます。
+build.gradle.kts&amp;gt;
+import org.gradle.kotlin.dsl.* import org.jetbrains.kotlin.gradle.dsl.Coroutines buildscript { repositories { mavenCentral() } } plugins { application kotlin(&amp;quot;jvm&amp;quot;) version &amp;quot;1.2.10&amp;quot; } application { mainClassName = &amp;quot;io.ktor.server.netty.DevelopmentEngine&amp;quot; } group = &amp;quot;jp.example.geckour&amp;quot; version = &amp;quot;1.0-SNAPSHOT&amp;quot; repositories { jcenter() mavenCentral() maven(&amp;quot;https://dl.bintray.com/kotlin/kotlinx&amp;quot;) maven(&amp;quot;http://dl.bintray.com/kotlin/ktor&amp;quot;) maven(&amp;quot;http://dl.bintray.com/kotlin/exposed&amp;quot;) } java { sourceCompatibility = JavaVersion.VERSION_1_8 } kotlin { experimental.coroutines = Coroutines.ENABLE } dependencies { val kotlinVersion: String by extra val ktorVersion = &amp;quot;0.</description>
+    </item>
     
     <item>
       <title>Raspberry Pi 3 model BのオンボードWi-Fiチップを使ってad-hocでbroadcast通信する</title>
