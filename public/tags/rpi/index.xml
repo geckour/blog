@@ -6,10 +6,26 @@
     <description>Recent content in Rpi on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 09 Jul 2016 20:53:28 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jul 2016 21:08:00 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/tags/rpi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi 3で気圧(と温度)の取得</title>
+      <link>http://geckour.orz.hm/blog/posts/2016/0712-get_pressure_with_rpi3/</link>
+      <pubDate>Tue, 12 Jul 2016 21:08:00 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/posts/2016/0712-get_pressure_with_rpi3/</guid>
+      <description>今回使うセンサはこちら(AE-LPS25H)。
+今回の回路図は前回と同じです
+今回は右側のブロックを使用します。
+I2Cデバイスの設定方法は前回を参照してください。
+LPS25Hのアドレスは0x5cです。
+今回のサンプルコードはこちら
+get_lps25h.py
+#!/usr/bin/env python # -*- coding: UTF-8 -*- import smbus as sb import os import sys import time import json INTERVAL = 1 LPS25H_ADDRESS = 0x5c LPS25H_CHANNEL = 1 WHO_AM_I = 0x0f CTRL_REG1 = 0x20 PRESS_POUT_XL = 0x28 PRESS_OUT_L = 0x29 PRESS_OUT_H = 0x2a TEMP_OUT_L = 0x2b TEMP_OUT_H = 0x2c def overwrite(s): sys.stdout.write(&amp;quot;\r\033[K&amp;quot; + s) sys.stdout.flush() class LPS25H: def __init__(self): self.lps25h = sb.SMBus(LPS25H_CHANNEL) self.fromcgi = &amp;quot;REQUEST_METHOD&amp;quot; in os.</description>
+    </item>
     
     <item>
       <title>Raspberry Pi 3 model B &amp; 部品類の購入からRaspberry Piセットアップまで</title>
