@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 13 Jun 2016 23:24:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jul 2016 20:53:28 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rpi</title>
+      <link>http://geckour.orz.hm/blog/tags/rpi/</link>
+      <pubDate>Sat, 09 Jul 2016 20:53:28 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/tags/rpi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Javascript</title>
