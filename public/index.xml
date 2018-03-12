@@ -17,10 +17,7 @@
       <pubDate>Wed, 20 Dec 2017 14:18:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2017/1220-taste_gradle_kotlin_dsl/</guid>
-      <description>はじめに 現状、Gradle Kotlin DSLなファイルを編集中に大量のLintエラーが出たり、それを解消するための再読込の仕組みが見当たらないなど、あまり積極的におすすめできる段階ではないということを予め述べておきます。
-結論が見たい方のために 最終的に出来上がった build.gradle.kts 及びその周辺ファイルをまず載せておきます。
-build.gradle.kts&amp;gt;
-import org.gradle.kotlin.dsl.* import org.jetbrains.kotlin.gradle.dsl.Coroutines buildscript { repositories { mavenCentral() } } plugins { application kotlin(&amp;quot;jvm&amp;quot;) version &amp;quot;1.2.10&amp;quot; } application { mainClassName = &amp;quot;io.ktor.server.netty.DevelopmentEngine&amp;quot; } group = &amp;quot;jp.example.geckour&amp;quot; version = &amp;quot;1.0-SNAPSHOT&amp;quot; repositories { jcenter() mavenCentral() maven(&amp;quot;https://dl.bintray.com/kotlin/kotlinx&amp;quot;) maven(&amp;quot;http://dl.bintray.com/kotlin/ktor&amp;quot;) maven(&amp;quot;http://dl.bintray.com/kotlin/exposed&amp;quot;) } java { sourceCompatibility = JavaVersion.VERSION_1_8 } kotlin { experimental.coroutines = Coroutines.ENABLE } dependencies { val kotlinVersion: String by extra val ktorVersion = &amp;quot;0.</description>
+      <description>はじめに 現状、Gradle Kotlin DSLなファイルを編集中に大量のLintエラーが出たり、それを解消するための再読込の仕組みが見当たらないなど、あ</description>
     </item>
     
     <item>
@@ -29,13 +26,7 @@ import org.gradle.kotlin.dsl.* import org.jetbrains.kotlin.gradle.dsl.Coroutines
       <pubDate>Sat, 02 Dec 2017 12:37:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2017/1202-broadcast_by_ad-hoc_with_rpi3_on_board_chip/</guid>
-      <description>ad-hocモードに設定する際、妙にハマったのでメモ。
-まずは時刻が正確に同期されていることを確認する。 Proxy環境下などでNTPが使えない場合は以下の手順で同期する。
-$ nano ~/.bashrc
-.bashrc&amp;gt;
-http_proxy=http://your.proxy.example.com:port https_proxy=http://your.proxy.example.com:port ftp_proxy=http://your.proxy.example.com:port alias setdate=&#39;sudo date --set @&amp;quot;$(wget -q https://ntp-a1.nict.go.jp/cgi-bin/jst -O - | sed -n 4p | cut -d. -f1)&amp;quot;&#39;  $ source ~/.bashrc $ setdate # 時刻を同期  $ sudo -E rpi-update # ファームウェアなどを更新 $ sudo reboot  $ sudo nano /etc/network/interfaces.d/static_ad-hoc_wlan0
-static_ad-hoc_wlan0&amp;gt;
-auto wlan0 allow-hotplug wlan0 iface wlan0 inet static address 192.168.0.x netmask 255.255.255.0 wireless-channel 4 # 空いてるチャンネルを選ぶ wireless-mode ad-hoc wireless-essid hoge # 何でもよい wireless-key f0f0f0f0f0 # 16進10桁 or 26桁  $ sudo rfkill unblock all;sudo ip addr flush dev wlan0;sudo systemctl restart networking $ sudo reboot # 設定がうまく反映されてない場合は再起動する  ここまででad-hocの設定は終了。</description>
+      <description>ad-hocモードに設定する際、妙にハマったのでメモ。 まずは時刻が正確に同期されていることを確認する。 Proxy環境下などでNTPが使えない</description>
     </item>
     
     <item>
@@ -44,34 +35,7 @@ auto wlan0 allow-hotplug wlan0 iface wlan0 inet static address 192.168.0.x netma
       <pubDate>Sat, 23 Sep 2017 01:36:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2017/0923-bought_essential_ph-1/</guid>
-      <description>戯れにAndroid Oをインストールしたところ、僕のNexus 5Xも無事タイマーが発動してお亡くなりになったのでちょうど発売間近だったPH-1を購入してみました。
-詳しいスペックについては公式ページを参照してください。
-予約から着弾まで 僕が予約しようとしたのはEssential公式が炎上した後だったので、無難に米Amazonで予約を試みました。
-日本発送も標準対応で一安心〜 …と思っていたのも束の間、Amazonからメールが届きます。
-「君の信用情報あてにならんからクレジットカードの請求書のコピーとか諸々セットでFAXしてね（要約）」
-えぇ〜… 面倒くさ… なんでまたFAX… と思いつつ、仕方がないのでコンビニから国際FAX送信。
-請求書をクレジットの券面と読み違えてすったもんだしたのは秘密。
-ちなみにこの時点で予約はキャンセルされています。
-そうこうしている内に発売日を迎え、ようやく信用情報が認められた頃にはBlack Moon(カラーバリエーション)が在庫切れ。
-仕方がないのでPure Whiteを注文するも、全然発送されない…
-調べていくと、Pure Whiteは発売日がずれ込んでいるという非公式情報が。(Essential社、基本的に公式情報が貧弱で使えないのどうにかしてほしい)
-Amazonを監視してたらBlack Moonの在庫が復活したので、速攻予約してPure Whiteをキャンセル。
-一番早い配送オプションを指定したらアメリカから4日ほどで自宅に届きました。
-使ってみて 箱がちっちゃい 必要最小限とまでは行きませんが、コンパクトにまとまっていていい感じです。
-内容物は以下の通り。
- PH-1本体 USB Type-A to USB Type-C ケーブル USB Type-C to ステレオミニジャック ケーブル AC to USB Type-C (female) アダプタ 説明書類(SIMピン付き)  ACアダプタが若干でかい以外はデザインも統一感があって好みでした。
-本体にステレオミニジャックがないのは辛い 分かっていたこととは言え結構辛い。
-そこまで防水性能が高いというわけでもないのになぜ付けないのか…
-そこそこ重い 外装の大部分がチタン製らしいのですが、それもあってかなかなかにずっしりとしています。
-最近のスマホの傾向に乗ってやや大きめの本体とあいまって、片手で使うのは少ししんどいかなあという感想。
-指紋認証が早い 比較対象がNexus 5Xのみで申し訳ないですが、それと比べるとかなり早く感じます。
-もともとNexus 5Xでそんなに不満を感じていなかったのですが、これになれるともう戻れない予感。
-ただ、認証エリアのリングの出っ張りが控えめなので、慣れるまではなかなかうまくタッチできませんでした(笑)
-背面が鏡面・平坦 良くも悪くもツルツル・ピッカピカです。
-鏡代わりに使えるのが何気に便利だなぁと思いつつ、滑りやすくもあるので純粋に落としそうになるのと、寝っ転がってお腹の上に置いたりしてもすぐに滑り落ちます。
-紙の上に置いたりしても、紙質によっては結構滑るので勢い余って机から落としたりしないよう注意が必要かも。
-カメラ部が出っ張っていないのと、先述の通り指紋認証のリングが平坦なので机などに置きながら使ってもカタカタしませんが、指の動きに合わせて本体も机の上を滑ったりします。
-NFCのアンテナ位置が不明 公式サイトを見てもどの辺りにNFCのアンテナが内蔵されているか分かる資料が見当たりません。</description>
+      <description>戯れにAndroid Oをインストールしたところ、僕のNexus 5Xも無事タイマーが発動してお亡くなりになったのでちょうど発売間近だったPH-</description>
     </item>
     
     <item>
@@ -80,22 +44,7 @@ NFCのアンテナ位置が不明 公式サイトを見てもどの辺りにNFC�
       <pubDate>Thu, 13 Apr 2017 23:14:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2017/0413-bought_jabra_elite_sport/</guid>
-      <description>ヨドバシ.comにてJabra Elite Sportを買いました。
-Blutooth接続の左右独立型ヘッドセット。メーカーサイトによると、内蔵のバッテリーで3時間使用可能、充電機能付きケースで6時間分充電可能とのこと。
-正直、相場からするとかなり値が張る感じはあります。
-そして、自分の場合沢山の種類が入っているイヤーアクセサリ群をどう組み合わせてもしっくりフィットしませんでした。
-ダメ元で他社製のイヤーピース(ER-CKM55S)と付属の突起が一番小さいイヤーウィングを組み合わせたところ、ようやく最高のフィット感をゲット。
-そしてこのヘッドセット、しっかりフィットしないと低音がほとんど聞こえず、ポテンシャルが全然引き出せません。
-耳の形は人それぞれだと思うので、物足りないなと感じた時は是非色々と試していただきたいです。
-一点注意が、このイヤーピースに交換すると付属のケースに収まらなくなる = 充電できなくなります。
-充電時はイヤーピースを外して対応していますが正直めんどくｓ（ｒｙ
-さて、しっかりフィットさせられた上で音質はどうなのかというと…
-好みはそこそこ分かれそうですが、やや低音がしっかり出つつ中音・高音も普通に出ていて、割とバランスが良いです。
-解像感もそこまで高くはないもののBluetoothということを考えるとそれなり。なによりBluetooth接続なのにホワイトノイズが気になりません。
-ただ、左右のペアリングが一瞬切れたり、母艦との通信が飛ぶこともやや頻繁にあります。まあこればっかりは仕方ない。でも気になる。
-個人的にこのヘッドセットの目玉機能だったHear Through(周囲の音をイヤホンをしたまま聞く機能)ですが、あまり詳しい説明がなかったので勝手に「音楽を聞きつつ周りの音をミキシングして流してくれる機能」だと思っていたら、母艦から音を流している時は使えず、何も流していない時に周りの音(特に声)を拾って再生してくれるというものでした。 [4/26追記] 一応「何かを再生しながら周りの音を拾ってミックスする」という使い方もできました。ただ、正直音楽を聞きながらだと最小音量まで下げてやっと周りで喋ってる内容がぎりぎり聞き取れる程度です。
-(3万円するんだからもっちょい頑張ってくれよ…)
-以上からコスパ含め総合的な点数をつけると、 65&amp;frasl;100[点] という感じでしょうか。2万円くらいにこなれるようだったら買いかもしれません。</description>
+      <description>ヨドバシ.comにてJabra Elite Sportを買いました。 Blutooth接続の左右独立型ヘッドセット。メーカーサイトによると、内蔵のバッテリ</description>
     </item>
     
     <item>
@@ -104,11 +53,7 @@ Blutooth接続の左右独立型ヘッドセット。メーカーサイトによ
       <pubDate>Fri, 15 Jul 2016 03:42:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0715-get_illuminance_with_rpi3/</guid>
-      <description>今回使ったセンサはこちら (TSL2561)
-今回の回路図がこちら
-今回のサンプルコードは、こちらのコードをsmbus向けに書きなおしたものです。
-get_tsl2561.py&amp;gt;
-#!/usr/bin/env python # -*- coding: UTF-8 -*- import smbus as sb import sys import os import time import json def overwrite(s): sys.stdout.write(&amp;quot;\r\033[K&amp;quot; + s) sys.stdout.flush() class TSL2561: VISIBLE = 2 # channel 0 - channel 1 INFRARED = 1 # channel 1 FULLSPECTRUM = 0 # channel 0 ADDR_LOW = 0x29 ADDR_NORMAL = 0x39 ADDR_HIGH = 0x49 PACKAGE_CS = 0 PACKAGE_T_FN_CL = 1 COMMAND_BIT = 0x80 WORD_BIT = 0x20 CONTROL_POWERON = 0x03 CONTROL_POWEROFF = 0x00 LUX_CHSCALE_TINT0 = 322.</description>
+      <description>今回使ったセンサはこちら (TSL2561) 今回の回路図がこちら 今回のサンプルコードは、こちらのコードをsmbus向けに書きなおしたものです。 get_tsl2561.py&amp;gt; #!/usr/bin/env python # -*- coding: UTF-8 -*-</description>
     </item>
     
     <item>
@@ -117,10 +62,7 @@ get_tsl2561.py&amp;gt;
       <pubDate>Fri, 15 Jul 2016 03:27:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0715-log_rpi3_sensor_value_into_server/</guid>
-      <description>前回まででセンサから値を取れるようになったので、今回はそのデータを利用してロギングしたいと思います。
-まずはRaspberry Pi上でCGIスクリプトを実行できるようにする準備から。
-$ sudo apt-get install apache2 #Apache(Webサーバ)のインストール 自動起動設定も勝手にやってくれます $ sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load #CGIの有効化1 $ sudo nano /etc/apache2/sites-available/000-default.conf #Apacheの設定変更 (CGIの有効化2)  000-default.conf&amp;gt;
-&amp;lt;VirtualHost *:80&amp;gt; # The ServerName directive sets the request scheme, hostname and port that # the server uses to identify itself. This is used when creating # redirection URLs. In the context of virtual hosts, the ServerName # specifies what hostname must appear in the request&#39;s Host: header to # match this virtual host.</description>
+      <description>前回まででセンサから値を取れるようになったので、今回はそのデータを利用してロギングしたいと思います。 まずはRaspberry Pi上でCGIス</description>
     </item>
     
     <item>
@@ -129,14 +71,7 @@ $ sudo apt-get install apache2 #Apache(Webサーバ)のインストール 自動
       <pubDate>Tue, 12 Jul 2016 21:08:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0712-get_pressure_with_rpi3/</guid>
-      <description>今回使うセンサはこちら(AE-LPS25H)。
-今回の回路図は前回と同じです
-今回は右側のブロックを使用します。
-I2Cデバイスの設定方法は前回を参照してください。
-LPS25Hのアドレスは0x5cです。
-今回のサンプルコードはこちら
-get_lps25h.py
-#!/usr/bin/env python # -*- coding: UTF-8 -*- import smbus as sb import os import sys import time import json INTERVAL = 1 LPS25H_ADDRESS = 0x5c LPS25H_CHANNEL = 1 WHO_AM_I = 0x0f CTRL_REG1 = 0x20 PRESS_POUT_XL = 0x28 PRESS_OUT_L = 0x29 PRESS_OUT_H = 0x2a TEMP_OUT_L = 0x2b TEMP_OUT_H = 0x2c def overwrite(s): sys.stdout.write(&amp;quot;\r\033[K&amp;quot; + s) sys.stdout.flush() class LPS25H: def __init__(self): self.lps25h = sb.SMBus(LPS25H_CHANNEL) self.fromcgi = &amp;quot;REQUEST_METHOD&amp;quot; in os.</description>
+      <description>今回使うセンサはこちら(AE-LPS25H)。 今回の回路図は前回と同じです 今回は右側のブロックを使用します。 I2Cデバイスの設定方法は前回を</description>
     </item>
     
     <item>
@@ -145,13 +80,7 @@ get_lps25h.py
       <pubDate>Sat, 09 Jul 2016 20:53:28 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0709-rpi3_first_setup/</guid>
-      <description>ふと思い立ってRaspberry Piを触ってみることにした。
-材料 今回購入したものはこちら:
- Raspberry Pi 3 model B(element14) microSDカード(16GB, TOSHIBA THN-M301R0160A4) USB Aオス-microBオスケーブル ブレッドボード ジャンパコード  オス-オス: たくさん オス-メス 赤: 5 黒: 5 白: 10  抵抗  100Ω: 5 300Ω: 5 1kΩ: 5  LED照光式押しボタンスイッチ(モーメンタリ) 赤外光LED: 10 フォトカプラ 青色LED: 2 押しボタンスイッチ(モーメンタリ) トグルスイッチ デジタル温湿度センサモジュール(AE-HDC1000) デジタル気圧センサモジュール(AE-LPS25H) デジタル照度センサモジュール(TSL2561)  計約1万円でした。
-セットアップ手順 OSインストール まずはRaspberry Pi用のOSインストーラであるNOOBSをダウンロード。 特にこだわりがない限り、NOOBS LITEではなく標準のNOOBSを使用することを推奨。 ダウンロードしたNOOBS_xxx.zipを解凍し、SDカードをFAT32でフォーマットしたらコピーする。
- SDカード キーボード/マウス HDMI(or 何らかの映像端子) 電源 の順に接続する。電源を接続すると勝手に起動する。  ここまでは良かったのだが、起動すると以下の画面が出た。
-Closeを押すとこの画面に。
-そしてここから1時間以上放置しても画面が変わらない。 気を取り直してフォーマッタをMacのディスクユーティリティに変えて再度フォーマットしてみた(それまではSD AssociationのSDFormatterを使っていた)が駄目だったので、結局Raspbianのimgを直接焼いた。 Macでの焼き方はここを参照。</description>
+      <description>ふと思い立ってRaspberry Piを触ってみることにした。 材料 今回購入したものはこちら: Raspberry Pi 3 model B(element14) microSDカード(16GB, TOSHIBA THN-M301R0160A4) USB A</description>
     </item>
     
     <item>
@@ -160,9 +89,7 @@ Closeを押すとこの画面に。
       <pubDate>Fri, 08 Jul 2016 19:15:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0708-airstation_bridge_wds/</guid>
-      <description>症状はAir Station側を(ハードウェアスイッチで)BRIDGEモードにするとアクセスできず、かといってROUTERモードにするとWDSを有効化出来ないというもの。
-結論としては、Air StationをBRIDGEモードにした上で、端末から
-   key value     IPアドレス 192.168.11.x   サブネットマスク 255.255.255.0   ルーター 192.168.11.100    として接続し、ブラウザのアドレスバーに 192.168.11.100 と入力しアクセスする。 あとはよしなに設定して終了。Air Stationまじ不思議ちゃん</description>
+      <description>症状はAir Station側を(ハードウェアスイッチで)BRIDGEモードにするとアクセスできず、かといってROUTERモードにするとWDS</description>
     </item>
     
     <item>

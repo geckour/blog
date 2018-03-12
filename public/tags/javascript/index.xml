@@ -17,10 +17,7 @@
       <pubDate>Fri, 15 Jul 2016 03:27:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0715-log_rpi3_sensor_value_into_server/</guid>
-      <description>前回まででセンサから値を取れるようになったので、今回はそのデータを利用してロギングしたいと思います。
-まずはRaspberry Pi上でCGIスクリプトを実行できるようにする準備から。
-$ sudo apt-get install apache2 #Apache(Webサーバ)のインストール 自動起動設定も勝手にやってくれます $ sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load #CGIの有効化1 $ sudo nano /etc/apache2/sites-available/000-default.conf #Apacheの設定変更 (CGIの有効化2)  000-default.conf&amp;gt;
-&amp;lt;VirtualHost *:80&amp;gt; # The ServerName directive sets the request scheme, hostname and port that # the server uses to identify itself. This is used when creating # redirection URLs. In the context of virtual hosts, the ServerName # specifies what hostname must appear in the request&#39;s Host: header to # match this virtual host.</description>
+      <description>前回まででセンサから値を取れるようになったので、今回はそのデータを利用してロギングしたいと思います。 まずはRaspberry Pi上でCGIス</description>
     </item>
     
     <item>

@@ -17,9 +17,7 @@
       <pubDate>Fri, 08 Jul 2016 19:15:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0708-airstation_bridge_wds/</guid>
-      <description>症状はAir Station側を(ハードウェアスイッチで)BRIDGEモードにするとアクセスできず、かといってROUTERモードにするとWDSを有効化出来ないというもの。
-結論としては、Air StationをBRIDGEモードにした上で、端末から
-   key value     IPアドレス 192.168.11.x   サブネットマスク 255.255.255.0   ルーター 192.168.11.100    として接続し、ブラウザのアドレスバーに 192.168.11.100 と入力しアクセスする。 あとはよしなに設定して終了。Air Stationまじ不思議ちゃん</description>
+      <description>症状はAir Station側を(ハードウェアスイッチで)BRIDGEモードにするとアクセスできず、かといってROUTERモードにするとWDS</description>
     </item>
     
   </channel>
