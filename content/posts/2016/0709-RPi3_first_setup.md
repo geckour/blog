@@ -3,6 +3,7 @@ title: "Raspberry Pi 3 model B & 部品類の購入からRaspberry Piセット�
 date: 2016-07-09T20:53:28+09:00
 draft: false
 tags: ["RPi"]
+images: ["/images/IMG_20160707_221512.jpg"]
 ---
 ふと思い立ってRaspberry Piを触ってみることにした。
 

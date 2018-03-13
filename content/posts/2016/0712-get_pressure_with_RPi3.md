@@ -3,6 +3,7 @@ title: "Raspberry Pi 3で気圧(と温度)の取得"
 date: 2016-07-12T21:08:00+09:00
 draft: false
 tags: ["RPi", "Web"]
+images: ["/images/temp_humi_press.png"]
 ---
 今回使うセンサは<a href="http://akizukidenshi.com/catalog/g/gK-08338/" target="_blank">こちら</a>(AE-LPS25H)。  
 今回の回路図は<a href="http://geckour.orz.hm/blog/2016/0712-get_temperature_and_humidity_withRPi3" target="_blank">前回</a>と同じです  

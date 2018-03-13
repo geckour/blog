@@ -3,6 +3,7 @@ title: "Essential PH-1を購入した"
 date: 2017-09-23T01:36:00+09:00
 draft: false
 tags: ["Gadget", "Android"]
+images: ["/images/FJIMG_20170917_165656.jpg"]
 ---
 戯れにAndroid Oをインストールしたところ、僕のNexus 5Xも無事タイマーが発動してお亡くなりになったのでちょうど発売間近だったPH-1を購入してみました。
 

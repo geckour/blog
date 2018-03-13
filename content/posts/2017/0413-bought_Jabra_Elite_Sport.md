@@ -3,6 +3,7 @@ title: "Jabra Elite Sportを買った"
 date: 2017-04-13T23:14:00+09:00
 draft: false
 tags: ["Gadget"]
+images: ["/images/FJIMG_20170403_222617-e1492091472407.jpg"]
 ---
 ヨドバシ.comにて<a href="http://www.yodobashi.com/ec/product/100000001003442933/index.html" target="_blank">Jabra Elite Sport</a>を買いました。  
 Blutooth接続の左右独立型ヘッドセット。メーカーサイトによると、内蔵のバッテリーで3時間使用可能、充電機能付きケースで6時間分充電可能とのこと。  
