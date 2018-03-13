@@ -1,0 +1,14 @@
+{{ if .IsPage }}
+  <meta property="og:title"       content="{{ .Title }}">
+  <meta property="og:url"         content="{{ .Permalink }}">
+  {{ if .Params.images}}
+    <meta property="og:image"       content="{{ .Site.BaseURL }}{{ with .Params.images }}{{ index . 0 | relURL }}{{ end }}">
+  {{ else }}
+    <meta property="og:image"       content="{{ .Site.BaseURL }}/images/avatar.png">
+  {{ end }}
+{{ else }}
+  <meta property="og:title"       content="{{ .Site.Title }}">
+  <meta property="og:url"         content="{{ .Site.BaseURL }}">
+  <meta property="og:image"       content="{{ .Site.BaseURL }}/images/avatar.png">
+{{ end }}
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
