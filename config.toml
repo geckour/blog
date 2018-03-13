@@ -14,6 +14,7 @@ googleAnalytics = "UA-57727105-3"
   twitter = "geckour"
   enableRSS = true
   enableShare = true
+  enableTwitterCard = true
   iconFont = "font-awesome"
   socialIconStyle = "circle"
   ignoreFiles = ["content/about.md"]
