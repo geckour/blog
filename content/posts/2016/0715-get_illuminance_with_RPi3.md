@@ -10,7 +10,7 @@ tags: ["RPi"]
 
 今回のサンプルコードは、<a href="https://github.com/janheise/TSL2561/blob/master/TSL2561.py" target="_blank">こちら</a>のコードをsmbus向けに書きなおしたものです。
 
-`get_tsl2561.py`>  
+`get_tsl2561.py` :  
 ```py
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-

@@ -13,7 +13,7 @@ $ sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.
 $ sudo nano /etc/apache2/sites-available/000-default.conf #Apacheの設定変更 (CGIの有効化2)
 ```
 
-`000-default.conf`>  
+`000-default.conf` :  
 ```sh
 <VirtualHost *:80>
         # The ServerName directive sets the request scheme, hostname and port that
@@ -53,7 +53,7 @@ $ sudo nano /etc/apache2/sites-available/000-default.conf #Apacheの設定変更
 $ sudo nano /etc/apache2/mods-available/mime.conf #CGIの有効化3
 ```
 
-`mime.conf`>  
+`mime.conf` :  
 ```sh
 AddHandler cgi-script .cgi .py #219行目あたり コメントアウトを解除、追記
 ```
@@ -66,7 +66,7 @@ $ sudo apachectl graceful #Apacheを再起動
 
 Raspberry Pi用のサンプルコードがこちら (前回までに出てきたものと同じです)  
 
-`get_hdc1000.py 温湿度取得用`>  
+`get_hdc1000.py 温湿度取得用` :  
 ```py
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
@@ -173,7 +173,7 @@ else:
     GPIO.cleanup()
 ```
 
-`get_lps25h.py 気圧取得用`>  
+`get_lps25h.py 気圧取得用` :  
 ```py
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
@@ -285,7 +285,7 @@ else:
 
 続いてサーバサイドのサンプルコードがこちら
 
-`log_atmos.py ログ保存用`>  
+`log_atmos.py ログ保存用` :  
 ```py
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
@@ -323,7 +323,7 @@ f.close()
 $ sudo nano /etc/crontab
 ```
 
-`crontab`>  
+`crontab` :  
 ```sh
 # 以下を追記
 * * * * * root /path/to/log_hdc1000_lps25h_from_raspi01.py
@@ -334,7 +334,7 @@ $ sudo nano /etc/crontab
 ついでに、値を保持したファイルを読み込んでJSONを返すサンプルがこちら
 このコードをJavaScriptから叩きます
 
-`get_atmos_from_hold_file.py`>  
+`get_atmos_from_hold_file.py` :  
 ```py
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
@@ -348,7 +348,7 @@ sys.stdout.write("callback(%s)" % f.readline())
 
 JavaScriptはこちら
 
-`atmos.js`>  
+`atmos.js` :  
 ```js
 $(function() {
     get();

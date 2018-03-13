@@ -11,7 +11,7 @@ Proxy環境下などでNTPが使えない場合は以下の手順で同期する
 
 `$ nano ~/.bashrc`
 
-`.bashrc`>  
+`.bashrc` :  
 ```sh
 http_proxy=http://your.proxy.example.com:port
 https_proxy=http://your.proxy.example.com:port
@@ -32,7 +32,7 @@ $ sudo reboot
 
 `$ sudo nano /etc/network/interfaces.d/static_ad-hoc_wlan0`
 
-`static_ad-hoc_wlan0`>  
+`static_ad-hoc_wlan0` :  
 ```sh
 auto wlan0
 allow-hotplug wlan0
@@ -56,7 +56,7 @@ $ sudo reboot  # 設定がうまく反映されてない場合は再起動する
 ついでにPythonでのbroadcastのサンプルコードも載せときます。
 
 送信用  
-`send.py`>  
+`send.py` :  
 ```py
 from socket import *
 
@@ -70,7 +70,7 @@ print "message \"%s\" has send." % message
 ```
 
 受信用  
-`receive.py`>  
+`receive.py` :  
 ```py
 from socket import *
 

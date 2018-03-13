@@ -10,7 +10,7 @@ tags: ["Kotlin", "Gradle"]
 ### 結論が見たい方のために
 最終的に出来上がった `build.gradle.kts` 及びその周辺ファイルをまず載せておきます。
 
-`build.gradle.kts`>  
+`build.gradle.kts` :
 ```kotlin
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.Coroutines
@@ -70,7 +70,7 @@ dependencies {
 }
 ```
 
-`gradle.properties`>  
+`gradle.properties` :
 ```kotlin
 org.gradle.script.lang.kotlin.accessors.auto=true
 kotlinVersion='1.2.10'
@@ -78,7 +78,7 @@ kotlinVersion='1.2.10'
 
 元のファイルはこちら
 
-`build.gradle`>  
+`build.gradle` :
 ```groovy
 group 'jp.example.geckour'
 version '1.0-SNAPSHOT'
