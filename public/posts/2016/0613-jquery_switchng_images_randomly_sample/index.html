@@ -8,7 +8,7 @@
   <meta property="og:title"       content="[jQuery] 60秒ごとにランダムに画像を切り替えるサンプル">
   <meta property="og:url"         content="http://geckour.orz.hm/blog/posts/2016/0613-jquery_switchng_images_randomly_sample/">
   
-    <meta property="og:image"       content="http://geckour.orz.hm/blog/images/avatar.png">
+    <meta property="og:image"       content="http://geckour.orz.hm/blogimages/avatar.png">
   
 
 <meta property="og:description" content="$(function(){ var isFirstLoadImg = true; var bgImg = [&quot;img/hoge.jpg&quot;, &quot;img/huga.jpg&quot;, &quot;img/piyo.jpg&quot;]; var index = Math.floor(Math.random() * bgImg.length); loadImg(index); function loadImg(i) { var image = new Image(); image.onload = function(){ if (isFirstLoadImg) { isFirstLoadImg = false; $(&quot;#bg&quot;).css(&quot;background-image&quot;,&quot;url(\&quot;&quot; &#43; bgImg[i] &#43; &quot;\&quot;)&quot;); $(&quot;#bg&quot;).fadeIn(1000); setIndex(); loadImg(index); } }; image.src = bg[i]; } function setIndex() { var index_current = index; while (index == index_current) { index = Math.floor(Math.random() * bgImg.length); } } function changeBg(i) { $(&quot;#bg&quot;).">
@@ -44,19 +44,19 @@ ga('send', 'pageview');
 
     <body>
        <nav class="main-nav">
-	
-	
-		<a href='http://geckour.orz.hm/blog/'> <span class="arrow">←</span>Home</a>
-	
-	<a href='http://geckour.orz.hm/blog/posts'>Archive</a>
-	<a href='http://geckour.orz.hm/blog/tags'>Tags</a>
-	<a href='http://geckour.orz.hm/blog/about'>About</a>
+    
+    
+        <a href='http://geckour.orz.hm/blog'> <span class="arrow">←</span>Home</a>
+    
+    <a href='http://geckour.orz.hm/blog/posts'>Archive</a>
+    <a href='http://geckour.orz.hm/blog/tags'>Tags</a>
+    <a href='http://geckour.orz.hm/blog/about'>About</a>
 
-	
+    
 
-	
-	<a class="cta" href="http://geckour.orz.hm/blog/index.xml">Subscribe</a>
-	
+    
+    <a class="cta" href="http://geckour.orz.hm/blog/index.xml">Subscribe</a>
+    
 </nav>
 
 
