@@ -13,6 +13,7 @@ googleAnalytics = "UA-57727105-3"
   bio = "へっぽこAndroidエンジニア"
   twitter = "geckour"
   enableRSS = true
+  enableShare = true
   iconFont = "font-awesome"
   socialIconStyle = "circle"
   ignoreFiles = ["content/about.md"]
