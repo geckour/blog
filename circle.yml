@@ -1,6 +1,10 @@
 machine:
   timezone: Asia/Tokyo
 
+test:
+  override:
+    - echo "no tests are needed"
+
 deployment:
   push_to_server:
     branch: master
