@@ -26,7 +26,7 @@
       <pubDate>Fri, 15 Jul 2016 03:42:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0715-get_illuminance_with_rpi3/</guid>
-      <description>今回使ったセンサはこちら (TSL2561) 今回の回路図がこちら 今回のサンプルコードは、こちらのコードをsmbus向けに書きなおしたものです。 get_tsl2561.py&amp;gt; #!/usr/bin/env python # -*- coding: UTF-8 -*-</description>
+      <description>今回使ったセンサはこちら (TSL2561) 今回の回路図がこちら 今回のサンプルコードは、こちらのコードをsmbus向けに書きなおしたものです。 get_tsl2561.py : #!/usr/bin/env python # -*- coding: UTF-8</description>
     </item>
     
     <item>

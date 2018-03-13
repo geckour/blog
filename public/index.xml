@@ -6,10 +6,19 @@
     <description>Recent content on 網戸の裏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 20 Dec 2017 14:18:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Mar 2018 00:57:21 +0900</lastBuildDate>
     
 	<atom:link href="http://geckour.orz.hm/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>http://geckour.orz.hm/blog/about/</link>
+      <pubDate>Wed, 14 Mar 2018 00:57:21 +0900</pubDate>
+      
+      <guid>http://geckour.orz.hm/blog/about/</guid>
+      <description>主にAndroidな技術の話とか、電子工作な話とか、その他趣味の話なんかをつらつらと書いていきたいなと思っています このブログはGitHub上</description>
+    </item>
     
     <item>
       <title>Gradle Kotlin DSLを使ってみる (build.gradleのbuild.gradle.kts化)</title>
@@ -53,7 +62,7 @@
       <pubDate>Fri, 15 Jul 2016 03:42:00 +0900</pubDate>
       
       <guid>http://geckour.orz.hm/blog/posts/2016/0715-get_illuminance_with_rpi3/</guid>
-      <description>今回使ったセンサはこちら (TSL2561) 今回の回路図がこちら 今回のサンプルコードは、こちらのコードをsmbus向けに書きなおしたものです。 get_tsl2561.py&amp;gt; #!/usr/bin/env python # -*- coding: UTF-8 -*-</description>
+      <description>今回使ったセンサはこちら (TSL2561) 今回の回路図がこちら 今回のサンプルコードは、こちらのコードをsmbus向けに書きなおしたものです。 get_tsl2561.py : #!/usr/bin/env python # -*- coding: UTF-8</description>
     </item>
     
     <item>
