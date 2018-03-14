@@ -16,6 +16,7 @@ ignoreFiles = [ "content/about\\.md" ]
   enableRSS = true
   enableShare = true
   enableDisqus = true
+  disqusShortname = "wang-hu-noli"
   enableTwitterCard = true
   iconFont = "font-awesome"
   socialIconStyle = "circle"
