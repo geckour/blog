@@ -4,6 +4,7 @@ jobs:
   build:
     docker:
       - image: felicianotech/docker-hugo:latest
+    parallelism: 4
     working_directory: ~/project
     steps:
       - checkout
