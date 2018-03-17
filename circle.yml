@@ -23,4 +23,4 @@ deployment:
   push_to_server:
     branch: master
     commands:
-      - rsync -rltgoDzO -vvv --no-p --del -e "ssh -p $PORT_NUM" public/ $USERNAME@$HOSTNAME:$DOCUMENT_ROOT
+      - rsync -rltgoDzO -vvv --no-p --del -e "ssh -p $PORT_NUM" ~/blog/public/ $USERNAME@$HOSTNAME:$DOCUMENT_ROOT
