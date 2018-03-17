@@ -1,3 +1,5 @@
+version: 2
+
 machine:
   timezone: Asia/Tokyo
 
@@ -10,10 +12,10 @@ jobs:
       - checkout
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v
+          command: HUGO_ENV=production hugo -v -s ~/project/
       - run:
           name: "Test Website"
-          command: htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
 
 test:
   override:
