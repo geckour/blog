@@ -13,9 +13,9 @@ jobs:
       - run:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo -v -s ~/project/
-      - run:
-          name: "Test Website"
-          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+#      - run:
+#          name: "Test Website"
+#          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
 
 test:
   override:
