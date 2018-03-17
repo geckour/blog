@@ -16,6 +16,7 @@ jobs:
 #      - run:
 #          name: "Test Website"
 #          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+      - deploy
 
 test:
   override:
