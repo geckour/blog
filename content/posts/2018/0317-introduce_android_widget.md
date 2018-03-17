@@ -4,7 +4,7 @@ date: 2018-03-17T13:14:42+09:00
 draft: false
 tags: ["Android"]
 ---
-今までいくつかAndroidアプリを作ってきたものの、ウィジェットを作ったことがないことに気づいたので今回はAndroidのWidgetに入門してみたいと思います。
+今までいくつかAndroidアプリを作ってきたものの、ウィジェットを作ったことがないことに気がついたので今回はAndroidのWidgetに入門してみたいと思います。
 
 ## Widget
 API level 1から存在するらしい~~古の~~技術です。  
@@ -87,9 +87,10 @@ API level 1から存在するらしい~~古の~~技術です。
 ### レシーバの作成・登録
 #### レシーバ作成
 ウィジェットの生成・更新を実現するために、`AppWidgetProvider`を継承してレシーバを作ります。  
-適宜メソッドをオーバーライドすることで、ウィジェット生成時の処理や`BroadcastIntent`受信 (ウィジェット更新) 時の処理を定義することができます。  
+適宜メソッドをオーバーライドすることで、ウィジェット生成時の処理や`PendingIntent`受信 (ウィジェット経由のアクション発火) 時の処理を定義することができます。  
 ここでも、<a href="https://github.com/geckour/NowPlaying4GPM" target="_blank">NowPlaying4GPM</a>で使用しているレシーバを簡略化して載せておきます。
 
+`ShareWidgetProvider.kt` :
 ```kotlin
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -168,13 +169,18 @@ class ShareWidgetProvider : AppWidgetProvider() {
             }
 }
 ```
-`updateWidget`の実装を見てやるとわかりますが、`AppWidgetManager#updateAppWidget`を呼んでウィジェットを更新する際には、RemoteViewのインスタンスを指定する必要があります。  
-`AppWidgetProvider`に`RemoteView`のインスタンスをもたせて、`setHoge`を呼んで情報の更新を行うのがよいのかもしれません。  
-`AppWidgetProvider`自体のインスタンスがどう保持されているかわからないので今回はこの様に毎回生成する実装としました。
+`updateWidget`の実装を見るとわかりますが、`AppWidgetManager#updateAppWidget`を呼んでウィジェットを更新する際には、RemoteViewのインスタンスを指定する必要があります。  
+情報の更新は`setTextViewText`などの様な限られたインタフェースしか提供されていないため、先述したようにData Bindingのうまみがほぼ皆無となります。  
+`AppWidgetProvider`に`RemoteView`のインスタンスをメンバでもたせて、`setHoge`を呼んで行うのがよいのかもしれません。  
+今回は`AppWidgetProvider`自体のインスタンスがどう保持されているかわからなかったので、この様に毎回生成する実装としました。  
+
+また、`onReceive`で受け取る`Intent`からはおそらく`Action`のみしか取得できず、`Bundle` (data) は`null`となっているので注意してください。
 
 #### レシーバ登録
 作成したレシーバをマニフェストファイルに登録します。  
-まずは`res/xml`以下に`AppWidgetProviderInfo`オブジェクトを生成するためのXMLファイルを作成します。  
+まずは`res/xml`以下に`AppWidgetProviderInfo`オブジェクトを生成するためのXMLファイルを作成します。
+
+`widget_provider` :
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
@@ -186,11 +192,43 @@ class ShareWidgetProvider : AppWidgetProvider() {
     android:resizeMode="horizontal"
     android:updatePeriodMillis="0" />
 ```
-確証はないのですが、ここで
+きちんと確かめたわけではないのですが、
 
 - `minWidth`, `minHeight`: ウィジェット生成時の最小サイズ
 - `minResizeWidth`, `minResizeHeight`: ユーザがウィジェットをリサイズする際の最小サイズ
 - `initialLayout`: ウィジェット生成時に用いるレイアウトファイル
 - `resizeMode`: ユーザがウィジェットをリサイズする際のリサイズ可能な方向
 
-と思ってください。
+だと思っています。  
+こうして作った`AppWidgetProviderInfo`オブジェクトを`AndroidManifest.xml`に登録します。
+```xml
+<manifest package="com.geckour.nowplaying4gpm"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".App"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- 中略 -->
+
+        <receiver android:name=".receiver.ShareWidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_provider"/>
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
+```
+これでウィジェットの準備は完了です。  
+
+ウィジェットの表示内容の更新は、上記`ShareWidgetProvider.kt`内の`updateWidget`と同様の処理を更新したいタイミングで行えば可能です。  
+やはり`RemoteView`のインスタンスをどこかに保持しておきたいものの、どこに持つかが悩ましいところ。  
+  
+今回は以上です。
