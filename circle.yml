@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: felicianotech/docker-hugo:latest
-    working_directory: ~/project
+    working_directory: ~
     steps:
       - checkout
       - run:
