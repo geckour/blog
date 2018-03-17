@@ -1,8 +1,5 @@
 version: 2
 
-machine:
-  timezone: Asia/Tokyo
-
 jobs:
   build:
     docker:
@@ -16,14 +13,10 @@ jobs:
 #      - run:
 #          name: "Test Website"
 #          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
-      - deploy
+      - run:
+          name: "Push to Server"
+          command: rsync -rltgoDzO -vvv --no-p --del -e "ssh -p $PORT_NUM" ~/project/public/ $USERNAME@$HOSTNAME:$DOCUMENT_ROOT
 
 test:
   override:
     - echo "no tests are needed"
-
-deployment:
-  push_to_server:
-    branch: master
-    commands:
-      - rsync -rltgoDzO -vvv --no-p --del -e "ssh -p $PORT_NUM" ~/project/public/ $USERNAME@$HOSTNAME:$DOCUMENT_ROOT
