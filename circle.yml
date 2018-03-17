@@ -1,6 +1,20 @@
 machine:
   timezone: Asia/Tokyo
 
+jobs:
+  build:
+    docker:
+      - image: felicianotech/docker-hugo:latest
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run:
+          name: "Run Hugo"
+          command: HUGO_ENV=production hugo -v
+      - run:
+          name: "Test Website"
+          command: htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+
 test:
   override:
     - echo "no tests are needed"
