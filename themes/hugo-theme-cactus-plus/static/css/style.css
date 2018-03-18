@@ -136,12 +136,12 @@ h2 {
 
 .profile #wrapper {
     padding: 60px 40px 0px;
-    max-width: 600px;
+    max-width: 780px;
     margin: 0 auto;
 }
 
 .profile #header {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     text-align: center;
     position: relative;
 }
@@ -226,7 +226,7 @@ nav.main-nav a.cta {
 }
 
 #wrapper.home {
-    max-width: 600px;
+    max-width: 780px;
     margin: 0 auto;
     padding: 0px 40px 20px 40px;
 }
@@ -341,7 +341,7 @@ em, i {
 .post h2 {
     margin-top: 20px;
     margin-bottom: 10px;
-    font: 300 24px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 400 28px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #111;
 }
 
@@ -364,6 +364,10 @@ em, i {
     display: block;
 }
 
+.post h2:not(.headline) {
+    border-bottom: 1px solid #ddd;
+}
+
 #post-list h2 {
     font: normal 17px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #aaa;
@@ -377,6 +381,7 @@ h3, h4, h5 {
 h3 {
     font-size: 20px;
     font-weight: 400;
+    border-bottom: 1px solid #ddd;
 }
 
 h4 {
@@ -547,7 +552,7 @@ Post List
 #header {
 }
 #wrapper.post {
-    max-width: 670px;
+    max-width: 780px;
 }
 .post {
     margin: auto;
