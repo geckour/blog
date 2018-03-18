@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "{{ replace .Name "_" " " | replaceRE "^\\d+-(.+)$" "$1" | title }}"
 date: {{ .Date }}
-draft: true
+draft: false
+tags: []
 ---
-
