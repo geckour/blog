@@ -1,8 +1,8 @@
 # blog
-Back of screen door
+Back of screen window
 
 # License
-    blog - Back of screen door
+    blog - Back of screen window
     Copyright (C) 2018 geckour
 
     This program is free software: you can redistribute it and/or modify
