@@ -16,7 +16,7 @@ jobs:
 #          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
       - run:
           name: "Push to Server"
-          command: rsync -rltzO -vvv --no-p --del -e "ssh -p $PORT_NUM -o StrictHostKeyChecking=no" ~/project/public/ $USERNAME@$HOSTNAME:$DOCUMENT_ROOT
+          command: rsync -rltczO -vvv --del -e "ssh -p $PORT_NUM -o StrictHostKeyChecking=no" ~/project/public/ $USERNAME@$HOSTNAME:$DOCUMENT_ROOT
 
 test:
   override:
