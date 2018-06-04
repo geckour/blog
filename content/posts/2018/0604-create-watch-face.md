@@ -216,7 +216,7 @@ override fun onDraw(canvas: Canvas, bounds: Rect) {
     // 省略
 
     if (isAmbient.not()) {
-        // Round Thinな画面に対応
+        // Round Chinな画面に対応
         val longerSideLength = max(measuredWidth, measuredHeight)
         val circleRect = RectF(
                 longerSideLength * 0.04f,
