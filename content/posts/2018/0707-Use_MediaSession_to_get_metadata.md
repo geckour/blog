@@ -7,11 +7,11 @@ tags: ["Android"]
 `BroadcastIntent`を利用して他のアプリが再生している楽曲情報を取得する方法は検索するとたくさん出てきますが、対象とするアプリごとの実装が必要になるためいかんせんイケていない。  
 というわけで昨今 Android で音楽再生する際にはほぼ間違いなく用いられる`MediaSession`を利用して、サクッとメタデータを抜き出す方法を紹介します。
 
-# `MediaSession`とは
+# MediaSession とは
 おそらく Android Auto の登場と共に、音楽再生アプリに依存しない再生コントロールAPIが必要となり、その実現の一環として導入されたクラスです。  
 メディアを扱う際に必要となる様々な情報が集約されていて、実際の再生コントロールには`MediaController`が用いられます。
 
-# `MediaController`を取得する
+# MediaController を取得する
 そして、`MediaController`を取得してしまえば`MediaController.getMetadata()`によってメタデータが手に入ってしまいます。
 `MediaController`の取得には`MediaSessionManager`を用いますが、ここで`MediaSessionManager.addOnActiveSessionsChangedListener()`を用いると、登録した`MediaSessionManager.OnActiveSessionsChangedListener`の`onActiveSessionsChanged()`に返ってくる`MutableList<MediaController?>`の並び順の法則性が不明な上に、`onActiveSessionsChanged()`が呼ばれる条件がよく分からず実用に耐えなかったので、今回は`NotificationListenerService`と併用しました。
 
