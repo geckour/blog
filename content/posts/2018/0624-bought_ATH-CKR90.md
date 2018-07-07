@@ -2,6 +2,7 @@
 title: "ATH-CKR90 を購入した"
 date: 2018-06-24T19:08:48+09:00
 draft: false
+tags: ["Gadget"]
 ---
 
 前々から気になっていた ATH-CKR90 を購入したので、使用感を紹介しようと思います。
