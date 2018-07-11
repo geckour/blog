@@ -1,6 +1,6 @@
 ---
 title: "Raspberry Pi 3でLEDと戯れる"
-date: 2016-07-10T101:39:15+09:00
+date: 2016-07-10T01:39:15+09:00
 draft: false
 tags: ["RPi"]
 ---
