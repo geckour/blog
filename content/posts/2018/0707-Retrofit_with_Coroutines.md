@@ -4,7 +4,7 @@ date: 2018-07-10T23:11:59+09:00
 draft: false
 tags: ["Android"]
 ---
-先日、Kotlin の`Coroutines`が Experimental でなくなったと聞いて、これは本格導入の機運だなと思ったのでひとまず Retrofit + RxKotlin を置き換えようと試みてみました。  
+先日、Kotlin の Coroutines が Experimental でなくなったと聞いて、これは本格導入の機運だなと思ったのでひとまず Retrofit + RxKotlin を置き換えようと試みてみました。  
 そこで、ざっくりとした導入方法と、Jake 謹製の Coroutines 用 Retrofit アダプタの実装についてつらつらと書いてみたいと思います。
 
 # Retrofit で Coroutines
@@ -36,7 +36,7 @@ object RetrofitUtil {
 }
 ```
 
-## Deferred で通信を受ける
+## Deferred で通信結果を受ける
 
 `Fuga.kt` :
 ```kotlin
