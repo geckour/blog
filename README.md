@@ -1,4 +1,4 @@
-# blog
+# blog [![CircleCI](https://circleci.com/gh/geckour/blog.svg?style=svg)](https://circleci.com/gh/geckour/blog)
 Back of screen window
 
 # License
