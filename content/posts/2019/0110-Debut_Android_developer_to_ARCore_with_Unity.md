@@ -74,11 +74,11 @@ Build Settings 画面はもう必要ないので閉じます。
 - Other Settings
   - Rendering
     - Multithreaded Rendering -> Off
-    - Identification
-      - Package Name -> お好きなものに
-      - Version -> お好きなものに
-      - Minimum API Level -> 7.0 / 24 以上に
-      - Target API Level -> 現時点の最新に
+  - Identification
+    - Package Name -> お好きなものに
+    - Version -> お好きなものに
+    - Minimum API Level -> 7.0 / 24 以上に
+    - Target API Level -> 現時点の最新に
 - XR Settings
     - ARCore Supported -> On
 
