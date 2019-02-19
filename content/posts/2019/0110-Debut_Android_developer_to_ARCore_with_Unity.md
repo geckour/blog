@@ -2,6 +2,7 @@
 title: "Androidアプリ開発者の Unity + ARCore 入門"
 date: 2019-01-10T13:47:52+09:00
 draft: false
+tags: ["ARCore", "Unity", "Android"]
 ---
 今回は、普段は Android アプリを主に開発している筆者が Unity を使って ARCore を弄ってみようとした奮闘記です。  
 なお、すべての情報は記事執筆時点のものであり、閲覧時には参考とならない場合がありますので注意してください。  
