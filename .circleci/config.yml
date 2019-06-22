@@ -27,6 +27,7 @@ workflows:
   version: 2
   deploy_master:
     jobs:
+      - build
       - deploy:
           requires:
             - build
