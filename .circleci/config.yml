@@ -21,7 +21,7 @@ jobs:
           name: npm install
           command: npm install --save-dev firebase-tools
       - attach_workspace:
-          at: project
+          at: public
       - run:
           name: deploy to Firebase Hosting
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
