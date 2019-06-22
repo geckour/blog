@@ -10,7 +10,7 @@ jobs:
           name: build hugo
           command: HUGO_ENV=production hugo -v -s ~/project/
       - persist_to_workspace:
-          root: .
+          root: public
           paths: .
   deploy:
     docker:
