@@ -9,6 +9,8 @@ jobs:
       - run:
           name: build hugo
           command: HUGO_ENV=production hugo -v -s ~/project/
+      - store_artifacts:
+          path: ~/project
   deploy:
     docker:
       - image: circleci/node:10.7
