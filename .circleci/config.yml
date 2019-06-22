@@ -9,8 +9,9 @@ jobs:
       - run:
           name: build hugo
           command: HUGO_ENV=production hugo -v -s ~/project/
-      - store_artifacts:
-          path: ~/project
+      - persist_to_workspace:
+          root: project
+          paths: ./
   deploy:
     docker:
       - image: circleci/node:10.7
@@ -19,6 +20,8 @@ jobs:
       - run:
           name: npm install
           command: npm install --save-dev firebase-tools
+      - attach_workspace:
+          at: project
       - run:
           name: deploy to Firebase Hosting
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
