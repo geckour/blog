@@ -9,20 +9,20 @@ jobs:
     steps:
       - checkout
       - run:
-        name: npm install
-        command: npm install --save-dev firebase-tools
+          name: npm install
+          command: npm install --save-dev firebase-tools
       - run:
-        name: build hugo
-        command: HUGO_ENV=production hugo -v -s ~/project/
+          name: build hugo
+          command: HUGO_ENV=production hugo -v -s ~/project/
       - run:
-        name: deploy to Firebase Hosting
-        command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
+          name: deploy to Firebase Hosting
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
         
 workflows:
   version: 2
   deploy_master:
     jobs:
       - deploy:
-        filters:
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master
