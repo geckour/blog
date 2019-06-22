@@ -1,9 +1,18 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: felicianotech/docker-hugo:latest
+    parallelism: 4
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run:
+          name: build hugo
+          command: HUGO_ENV=production hugo -v -s ~/project/
   deploy:
     docker:
       - image: circleci/node:10.7
-      - image: felicianotech/docker-hugo:latest
     parallelism: 4
     working_directory: ~/project
     steps:
@@ -12,9 +21,6 @@ jobs:
           name: npm install
           command: npm install --save-dev firebase-tools
       - run:
-          name: build hugo
-          command: HUGO_ENV=production hugo -v -s ~/project/
-      - run:
           name: deploy to Firebase Hosting
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
         
@@ -22,6 +28,7 @@ workflows:
   version: 2
   deploy_master:
     jobs:
+      - build
       - deploy:
           filters:
             branches:
