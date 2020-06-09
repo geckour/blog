@@ -15,13 +15,13 @@ Kotlin の (やりすぎ説はあるが) 便利なところといえば、Collec
 
 "必ずしも" ということはできる場合とできない場合があるのですが、そのサンプルがこちらです。
 
-```kt
+```kotlin
 // OK
 SpannableStringBuilder("abc\n\n\n").trimEnd() as Spanned
 SpannableStringBuilder("abc").trimEnd() as Spanned
 ```
 
-```kt
+```kotlin
 // NG
 SpannableStringBuilder("\n\n\n").trimEnd() as Spanned
 SpannableStringBuilder("").trimEnd() as Spanned
