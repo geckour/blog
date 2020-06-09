@@ -37,6 +37,6 @@ SpannableStringBuilder("").trimEnd() as Spanned
 
 # おわりに
 
-~~別に　`subSequence(0,0)` で返せば良くない？~~
+~~別に `subSequence(0,0)` で返せば良くない？~~
 
 それでは！
