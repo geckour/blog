@@ -54,6 +54,6 @@ originalString.codePoints()
 # まとめ
 
 今回は `String` で iterate したいときには `String#codePoints()` を使うのが便利っぽいよ、ということを紹介しました。  
-少しでも皆さんの参考に慣れれば嬉しいです。
+少しでも皆さんの参考になれれば嬉しいです。
 
 ~~本来なら `CharSequence` を iterate する時に `Char` のリストとして扱われるのがおかしい気もしますが…~~
