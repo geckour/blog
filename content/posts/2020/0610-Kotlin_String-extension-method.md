@@ -2,6 +2,7 @@
 title: "Kotlin の String extension method の罠"
 date: 2020-06-10T03:04:00+09:00
 draft: false
+tags: ["Kotlin"]
 ---
 
 Kotlin の (やりすぎ説はあるが) 便利なところといえば、Collections や String の拡張関数が真っ先に浮かぶ筆者ですが、先日いつも通り便利に拡張関数を利用しながら Android 開発をしていたときに罠 (？) を踏み抜いたので記録に残しておこうかと思います。
