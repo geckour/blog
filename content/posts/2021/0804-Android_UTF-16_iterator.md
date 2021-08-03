@@ -14,7 +14,7 @@ tags: ["Android", "Kotlin"]
 
 そして、UTF-16 では、8 bit で表せるコード範囲に収まらなかった文字については "サロゲートペア" という仕組みを用いて 16 bit (8 bit の符号を 2 つ束ねた組) で表現されます。
 
-# `String` と `CharSequence` と `forEach()`
+# String と CharSequence と forEach()
 
 `String` は `CharSequence` を継承したクラスです。  
 そして、`CharSequence` は拡張関数によりあたかも `Iterable` を継承しているかのような関数群が提供されています。
@@ -26,7 +26,7 @@ tags: ["Android", "Kotlin"]
 
 具体的には絵文字などが影響を受けやすいです。
 
-# それでも `String` で `forEach()` したいじゃん
+# それでも String で forEach() したいじゃん
 
 ここまでで、`String` で安直に `forEach()` を使うと文字化けが発生する可能性がある、という問題を紹介しました。  
 ですが、やはり `String` でも `forEach()` なり `map()` なり Collection 操作をしたい場面はあるかと思います。
