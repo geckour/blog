@@ -1,6 +1,6 @@
 ---
 title: "ExoPlayer2 の FFmpeg extension をビルドしたときのメモ"
-date: 2021-09-02T23:49:00+09:00
+date: 2021-09-02T23:46:16+09:00
 draft: false
 tags: [Android, ExoPlayer]
 ---
