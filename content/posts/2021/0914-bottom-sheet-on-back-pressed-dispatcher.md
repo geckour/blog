@@ -1,5 +1,5 @@
 ---
-title: "BottomSheetBehavior の state と　OnBackPressedDispatcher を連携する"
+title: "BottomSheetBehavior の state と OnBackPressedDispatcher を連携する"
 date: 2021-09-14T00:41:29+09:00
 draft: false
 tags: [Android]
