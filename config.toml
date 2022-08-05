@@ -24,7 +24,5 @@ preserveTaxonomyNames = true
   twitter = "https://twitter.com/geckour"
   github = "https://github.com/geckour"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      typographer = false
+[blackfriday]
+  smartypants = false
