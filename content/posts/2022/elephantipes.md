@@ -1,8 +1,8 @@
 ---
 title: "亀甲竜の成長記録"
-date: 2022-08-06T22:00:00+09:00
+date: 2022-08-05T23:50:10+09:00
 draft: false
-tags: [植物, 亀甲竜, elephantipes]
+tags: ["植物", "亀甲竜", "elephantipes"]
 ---
 
 こんにちは。  
