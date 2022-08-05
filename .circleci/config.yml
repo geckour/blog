@@ -12,6 +12,8 @@ jobs:
       - persist_to_workspace:
           root: public
           paths: .
+    # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
+    resource_class: large
   deploy:
     docker:
       - image: circleci/node:latest
@@ -24,7 +26,8 @@ jobs:
           at: public
       - run:
           name: deploy to Firebase Hosting
-          command: ./node_modules/.bin/firebase deploy --only hosting --token=$FIREBASE_TOKEN
+          command: ./node_modules/.bin/firebase deploy --only hosting
+            --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2
