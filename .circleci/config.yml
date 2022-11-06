@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: felicianotech/docker-hugo:latest
+      - image: klakegg/hugo:latest
     working_directory: ~/project
     steps:
       - checkout
@@ -31,7 +31,7 @@ jobs:
 
 workflows:
   version: 2
-  deploy_master:
+  build_and_deploy_if_master:
     jobs:
       - build
       - deploy:
