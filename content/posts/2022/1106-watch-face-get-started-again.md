@@ -254,7 +254,7 @@ complicationSlotsManager.complicationSlots.forEach { (_, complication) ->
 
 # スマートフォンからの大きなデータの同期
 
-スマートフォン側の設定アプリから大きなデータを watch face アプリに同期させたい場合、`DataClient` 経由でデータをセットし、`WatchFaceService` で 受け取るのが一般的かと思います。
+スマートフォン側の設定アプリから画像などの大きなデータを watch face アプリに同期させたい場合 (背景画像を指定できるようにしたい場合など) 、`DataClient` 経由でデータをセットし、`WatchFaceService` で 受け取るのが一般的かと思います。
 
 しかし、この場合 `WatchFaceService#createWatchFace()` 内などで
 
