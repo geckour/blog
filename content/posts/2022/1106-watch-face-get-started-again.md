@@ -14,9 +14,9 @@ tags: ["Android", "Kotlin"]
 
 # Service の作成
 
-以前紹介した時から Service の作成方法に大きな変更がありました。
+[以前紹介した](https://blog.geckour.com/posts/2018/0604-create-watch-face/#%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9)時とは Service の作成方法が大きく変わっています。
 
-以前は `CanvasWatchFaceService` を継承していましたが、今はそれがなくなり `WatchFaceService` を継承する方法に変わったようです。
+以前は `CanvasWatchFaceService` を継承していましたが、今はそれがなくなって `WatchFaceService` を継承する方法に変わったようです。
 
 特に難しいところはないと思うので、詳細は[サンプル](https://github.com/geckour/Nocturne/blob/master/wear/src/main/java/com/geckour/nocturne/NocturneFaceService.kt)を見てください。
 
@@ -32,7 +32,8 @@ tags: ["Android", "Kotlin"]
 小ネタとして、ミリ秒を含む秒は `zonedDateTime.toInstant().toEpochMilli() % 60000 * 0.001f` のようにすることで取得することができます。
 
 ここであまりに複雑な描画処理などの重い処理を行うと、処理の完了が 1 フレーム分の時間に間に合わずカクカクした描画になってしまうので、最適化を頑張りましょう。  
-また、電池持ちを良くするために、ambient mode など画面がアクティブでない時の処理を間引いたり UI のコントラストを抑えたりするなどの対策もしたいところです。
+また、電池持ちを良くするために、ambient mode など画面がアクティブでない時の処理を間引いたり UI のコントラストを抑えたりするなどの対策もしたいところです。  
+なお、ambient mode ではフレームレートが 1 fpm 程度に制限されます。
 
 ちなみに、この記事を書いている時点では watch face の描画を Jetpack Compose でできるようにする予定はないようです。
 
@@ -250,13 +251,13 @@ complicationSlotsManager.complicationSlots.forEach { (_, complication) ->
 
 このようにしてあげれば良いです。
 
-上記の設定では、ユーザが complecation slot に有効なデータソースを設定していない場合、complecation が描画されるべき箇所には何も表示されないので注意してください。
+ただし、上記の設定ではユーザが complecation slot に有効なデータソースを設定していない場合、complecation が描画されるべき箇所には何も表示されないので注意してください。
 
 # スマートフォンからの大きなデータの同期
 
-スマートフォン側の設定アプリから画像などの大きなデータを watch face アプリに同期させたい場合 (背景画像を指定できるようにしたい場合など) 、`DataClient` 経由でデータをセットし、`WatchFaceService` で 受け取るのが一般的かと思います。
+スマートフォン側の設定アプリから画像などの大きなデータを watch face アプリに同期させたい場合 (背景画像を指定できるようにしたい場合など) 、`DataClient` 経由でデータをセットし、`WatchFaceService` で受け取るのが一般的かと思います。
 
-しかし、この場合 `WatchFaceService#createWatchFace()` 内などで
+しかし、`WatchFaceService#createWatchFace()` 内などで
 
 ```kotlin
 Wearable.getDataClient(this)
@@ -266,9 +267,9 @@ Wearable.getDataClient(this)
     }
 ```
 
-この様にしたとしてもリスナーの呼び出しを待つことができず結果を取得できません。
+この様にしたとしても、リスナーの呼び出しを待つことができず結果を取得できません。
 
-そこで、`createWatchFace()` は `suspend fun` なので、依存ライブラリに `org.jetbrains.kotlinx:kotlinx-coroutines-play-services` を追加し
+`createWatchFace()` は `suspend fun` なので、依存ライブラリに `org.jetbrains.kotlinx:kotlinx-coroutines-play-services` を追加し
 
 ```kotlin
 Wearable.getDataClient(this)
@@ -277,7 +278,7 @@ Wearable.getDataClient(this)
     // ...
 ```
 
-この様にすることでデータを取得することができます。
+この様にすることで無事データを取得することができます。
 
 # 終わりに
 
