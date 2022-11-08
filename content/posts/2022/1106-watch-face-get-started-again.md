@@ -261,8 +261,7 @@ complicationSlotsManager.complicationSlots.forEach { (_, complication) ->
 
 ```kotlin
 Wearable.getDataClient(this)
-    .dataItems
-    .addOnSuccessListener {
+    .addListener {
         // ...
     }
 ```
@@ -273,9 +272,10 @@ Wearable.getDataClient(this)
 
 ```kotlin
 Wearable.getDataClient(this)
-    .dataItems
+    .addListener {
+        // ...
+    }
     .await()
-    // ...
 ```
 
 この様にすることで無事データを取得することができます。
