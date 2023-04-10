@@ -12,7 +12,7 @@ tags: ["Android", "Jetpack Compose", "Kotlin"]
 
 なお今回の成果物は [このあたり](https://github.com/geckour/HomeAPI/blob/main/app/src/main/java/com/geckour/homeapi/ui/main/Dialog.kt) にあります。
 
-<!-- TODO: Insert sample movie as GIF -->
+<img src="/movies/screen-20230410-131621-2.gif" alt="Sample GIF animation" style="width: 40%; margin: auto; display: block;">
 
 # 今回のグラフ
 
