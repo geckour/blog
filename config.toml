@@ -26,3 +26,8 @@ preserveTaxonomyNames = true
 
 [blackfriday]
   smartypants = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
