@@ -3,7 +3,7 @@ languageCode = "ja-jp"
 title = "網戸の裏"
 theme = "hugo-theme-cactus-plus"
 hasCJKLanguage = true
-googleAnalytics = "UA-57727105-3"
+googleAnalytics = "G-YRD9L1EN0J"
 preserveTaxonomyNames = true
 
 [params]
