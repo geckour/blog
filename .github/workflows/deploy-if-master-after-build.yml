@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: '20.10.0'
 
-      - name: Install npm
+      - name: Install firebase-tools
         run: npm install --save-dev firebase-tools
 
       - name: Deploy
