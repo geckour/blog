@@ -1,5 +1,6 @@
 {
   "projects": {
-    "master": "blog-geckour"
+    "master": "blog-geckour",
+    "default": "blog-geckour"
   }
 }

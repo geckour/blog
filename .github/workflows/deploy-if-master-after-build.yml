@@ -1,0 +1,31 @@
+name: Deploy if on master after build
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.121.1'
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        if: github.ref == 'refs/heads/master'
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOG_GECKOUR }}
+          expires: 30d
+          projectId: your-Firebase-project-ID
+          channelId: live
