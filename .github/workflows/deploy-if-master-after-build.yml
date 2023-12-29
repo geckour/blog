@@ -1,6 +1,9 @@
 name: Deploy if on master after build
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
 
 jobs:
